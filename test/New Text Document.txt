@@ -1,0 +1,111 @@
+<center>
+
+<style>
+/* Style the buttons */
+.btndenom {
+	border: 1px solid #444053;
+    outline: none;
+    padding: 2px 21px;
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 11px 0;
+}
+
+/* Style the active class, and buttons on mouse-over */
+.active, .btndenom:hover {
+  background-color: #444053;
+  color: white;
+}
+</style>
+
+<!---
+<select id="plList" onchange="myFunction">
+  <option value="BMW"><span class="export_option">HAHA</span></option>
+  <option value="HAHA"><span class="export_option">BMW</span></option>
+</select> -->
+
+<div id="plList">
+  <lii class="btndenom active" value="">1</lii>
+  <lii class="btndenom " value="">2</lii>
+
+</div>
+
+
+
+<br/>
+<br/>
+
+<select id="npName"></select>
+
+<select id="npTitle"></select>
+
+<br />
+<!---
+<div id="plList">
+<li>Nightcore - SAD!</li>
+<li>Nightcore - Lucid Dreams (Juice WRLD/Kid Travis COVER)</li>
+</div>
+--->
+</div>
+</center>
+
+<script>
+// Add active class to the current button (highlight it)
+var header = document.getElementById("plList");
+var btns = header.getElementsByClassName("btndenom");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+  var current = document.getElementsByClassName("active");
+  current[0].className = current[0].className.replace(" active", "");
+  this.className += " active";
+  });
+}
+</script>
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+    <script>
+jQuery(function myFunction ($) {
+    var supportsTrack = !!document.createElement('select');
+    if (supportsTrack) {
+        var index = 0,
+            tracks = [{
+                "track": 1,
+                'name': '<option value="5000">5000</option>',
+				'name2': '<option value="5000">5000</option>',
+            }, {
+                "track": 2,
+                'name': '<option value="8000">80000</option>',
+				'name2': '<option value="5000">5000</option>',
+            }],
+
+            npName = $('#npName'),
+			npTitle = $('#npTitle'),
+
+            li2 = $('#plList lii').click(function () {
+                var id = parseInt($(this).index());
+                if (id !== index) {
+                    playTrack(id);
+                }
+            }),
+            loadTrack = function (id) {
+                $('.plSel').removeClass('plSel');
+                $('#plList li2:eq(' + id + ')').addClass('plSel');
+                npName.html(tracks[id].name);
+				npTitle.html(tracks[id].name2);
+                index = id;
+            },
+            playTrack = function (id) {
+                loadTrack(id);
+            };
+        loadTrack(index);
+    }
+});
+</script>
+
+
+
+
+<br/><br/><br/><br/>
