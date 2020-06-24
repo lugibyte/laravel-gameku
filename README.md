@@ -12,3 +12,5 @@ adapun beberapa fitur dalam app tersebut yang kami cantumkan dengan refrensinya 
 
 ## Anggota Kelompok yang mengerjakan
 - Syahrul Ridho Prayogo (201869040090)
+- M Khilmi Anjastiar (201869040032)
+- Asy'ari Fandi Ahmad (201869040009)
