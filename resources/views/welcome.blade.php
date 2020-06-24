@@ -13,6 +13,7 @@
             
                        
                     <div class="row">
+                    @if ($gameindex->count() > 0)
                     @foreach ($gameindex as $gm)
                         <div class="col-sm-3">
                             <div class="p-3">
@@ -26,7 +27,11 @@
                             </div>
                         </div>
                     @endforeach
-
+                     @else
+                        <div class="alert alert-danger" role="alert">
+                            Tidak ada data
+                        </div>
+                        @endif
                     </div>
 
           
